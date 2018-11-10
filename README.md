@@ -4,7 +4,7 @@ This document contains a bunch of resources for CodeJam 2018. Feel free to look 
 
 ## 👶 Basics
 
-If this is your first time at a hackathon or coding past COMP 202, it's probably best that you learn some concepts that'll help ramp you up before!
+If this is your first time at a hackathon or coding past ECSE 202 or COMP 202, it's probably best that you learn some concepts that'll help ramp you up before!
 
 - [Learn Git Branching](https://learngitbranching.js.org/) - Interactive tutorial to learn Git, the most popular version control system for collaborative programming.
 - [What's an API?](https://medium.freecodecamp.org/what-is-an-api-in-english-please-b880a3214a82) - Learn how to use external services in your projects.
