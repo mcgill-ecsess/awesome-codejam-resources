@@ -20,7 +20,7 @@ These are some recommended tools for general hackathon success:
 
 - [Visual Studio Code](https://code.visualstudio.com/) - Your favorite programmer's favorite text editor.
 - [GitHub Desktop](https://desktop.github.com/) - Easy-to-use Git GUI interface so you don't need to use the command line.
-- [Jupyter Notebooks](http://jupyter.org/install) - Powerful Python IDE hosted as a web app. Widely used in Machine Learning
+- [Jupyter Notebooks](http://jupyter.org/install) - Powerful Python tool hosted as a web app useful for writing and organizing Machine Learning code. Very visually appealing and great for running code snippets.
 - [Postman](https://www.getpostman.com/) - REST API testing tool.
 
 ## 🏎 Boilerplates
