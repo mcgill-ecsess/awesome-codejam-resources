@@ -95,7 +95,7 @@ Without data, how are you going to recognize patterns? Here are some resources y
 - [Stanford House Numbers Dataset](http://ufldl.stanford.edu/housenumbers/)
 - [Food Images Dataset](http://www.vision.ee.ethz.ch/datasets_extra/food-101/)
 - [Cat Images Dataset (purrrfect)](http://web.archive.org/web/20150520175645/http:/137.189.35.203/WebUI/CatDatabase/catData.html)
-- [Flikr Thematic Image Datasets](http://people.csail.mit.edu/celiu/CVPR2010/FMD/index.html)
+- [Flickr Thematic Image Datasets](http://people.csail.mit.edu/celiu/CVPR2010/FMD/index.html)
 
 If you want to avoid training your own models, you can also find pretrained models online!
 
