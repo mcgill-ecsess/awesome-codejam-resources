@@ -20,9 +20,8 @@ These are some recommended tools for general hackathon success:
 
 - [Visual Studio Code](https://code.visualstudio.com/) - Your favorite programmer's favorite text editor.
 - [GitHub Desktop](https://desktop.github.com/) - Easy-to-use Git GUI interface so you don't need to use the command line.
+- [Jupyter Notebooks](http://jupyter.org/install) - Powerful Python IDE hosted as a web app. Widely used in Machine Learning
 - [Postman](https://www.getpostman.com/) - REST API testing tool.
-- [Jupyter Notebooks](http://jupyter.org/install) - Powerful Python web app IDE. Widely used in Machine Learning
-- [Google Colab](https://colab.research.google.com/notebooks/welcome.ipynb) - Google's Python Cloud Development Environment, allows running models on a GPU
 
 ## 🏎 Boilerplates
 
@@ -31,8 +30,8 @@ Boilerplate code is your best friend for a hackathon! As these are time-limited 
 Here are a few examples:
 
 - [Mega Boilerplate](https://github.com/sahat/megaboilerplate)
-- [React Boilerplate](https://github.com/react-boilerplate/react-boilerplate)
 - [Hackathon Starter](https://github.com/sahat/hackathon-starter)
+- [React Boilerplate](https://github.com/react-boilerplate/react-boilerplate)
 
 If these don't suit your usecase, feel free to look up other boilerplates online!
 
@@ -40,21 +39,21 @@ If these don't suit your usecase, feel free to look up other boilerplates online
 
 Here are a few libraries that might prove to be useful during the competition! If the official library isn't written in your favorite language, try finding wrappers/bindings for it online!
 
+- [brain.js](https://github.com/BrainJS/brain.js)
 - [CoreNLP](https://github.com/stanfordnlp/CoreNLP)
 - [Keras](https://keras.io/)
 - [Leaflet](http://leafletjs.com/)
+- [Natural for node.js](https://github.com/NaturalNode/natural)
 - [NLTK](http://www.nltk.org/)
-- [OpenCV](https://pypi.org/project/opencv-python/)
 - [Numpy](http://www.numpy.org/)
+- [Octave](https://www.gnu.org/software/octave/)
+- [OpenCV](https://pypi.org/project/opencv-python/)
 - [PyTorch](https://pytorch.org/)
+- [scikit-learn](http://scikit-learn.org/stable/)
 - [Tensorflow](https://www.tensorflow.org/tutorials/)
 - [Tensorflow JS](https://js.tensorflow.org/)
-- [scikit-learn](http://scikit-learn.org/stable/)
 - [TextBlob](http://textblob.readthedocs.org/)
 - [tracking.js](https://trackingjs.com/)
-- [brain.js](https://github.com/BrainJS/brain.js)
-- [Natural for node.js](https://github.com/NaturalNode/natural)
-- [Octave](https://www.gnu.org/software/octave/)
 
 ## 🔌 Useful Plug and Play APIs
 
@@ -76,46 +75,46 @@ Here are a few APIs that might prove to be useful during the competition! These 
 
 Without data, how are you going to recognize patterns? Here are some resources you can use to quickly find data sets!
 
-- [Australian Government Data](https://data.gov.au/dataset)
-- [Google Data Set Search](https://toolbox.google.com/datasetsearch)
-- [Kaggle Datasets](https://www.kaggle.com/datasets)
-- [Open NYC Data](https://opendata.cityofnewyork.us/)
-- [Microsoft Building Footprint Data](https://wiki.openstreetmap.org/wiki/Microsoft_Building_Footprint_Data)
-- [Geographic Datasets](http://freegisdata.rtwilson.com/)
-- [Microsoft T-Drive Dataset: Taxi One-Week Trajectories](https://www.microsoft.com/en-us/research/publication/t-drive-trajectory-data-sample/)
-- [Microsoft GPS Trajectories Dataset](https://www.microsoft.com/en-us/download/details.aspx?id=52367&from=http%3A%2F%2Fresearch.microsoft.com%2Fen-us%2Fdownloads%2Fb16d359d-d164-469e-9fd4-daa38f2b2e13%2F)
-- [Wikipedia Toxic Comment Classification Challenge](https://www.kaggle.com/c/jigsaw-toxic-comment-classification-challenge)
-- [Reddit Comments DataSet](https://github.com/linanqiu/reddit-dataset)
-- [Amazon Q&A Dataset](http://jmcauley.ucsd.edu/data/amazon/qa/)
 - [36th Parliament of Canada Debates Dataset](https://www.isi.edu/natural-language/download/hansard/)
-- [Yelp Dataset (businesses, reviews, and user data)](https://www.yelp.com/dataset)
-- [Home Depot Search Queries Dataset](https://www.kaggle.com/c/home-depot-product-search-relevance/data)
-- [IMDB Dataset](http://ai.stanford.edu/~amaas/data/sentiment/)
-- [Stanford Car Images Dataset](http://ai.stanford.edu/~jkrause/cars/car_dataset.html)
-- [Stanford House Numbers Dataset](http://ufldl.stanford.edu/housenumbers/)
-- [Food Images Dataset](http://www.vision.ee.ethz.ch/datasets_extra/food-101/)
+- [Amazon Q&A Dataset](http://jmcauley.ucsd.edu/data/amazon/qa/)
+- [Australian Government Data](https://data.gov.au/dataset)
 - [Cat Images Dataset (purrrfect)](http://web.archive.org/web/20150520175645/http:/137.189.35.203/WebUI/CatDatabase/catData.html)
 - [Flickr Thematic Image Datasets](http://people.csail.mit.edu/celiu/CVPR2010/FMD/index.html)
+- [Food Images Dataset](http://www.vision.ee.ethz.ch/datasets_extra/food-101/)
+- [Geographic Datasets](http://freegisdata.rtwilson.com/)
+- [Google Data Set Search](https://toolbox.google.com/datasetsearch)
+- [Home Depot Search Queries Dataset](https://www.kaggle.com/c/home-depot-product-search-relevance/data)
+- [IMDB Dataset](http://ai.stanford.edu/~amaas/data/sentiment/)
+- [Kaggle Datasets](https://www.kaggle.com/datasets)
+- [Microsoft Building Footprint Data](https://wiki.openstreetmap.org/wiki/Microsoft_Building_Footprint_Data)
+- [Microsoft GPS Trajectories Dataset](https://www.microsoft.com/en-us/download/details.aspx?id=52367&from=http%3A%2F%2Fresearch.microsoft.com%2Fen-us%2Fdownloads%2Fb16d359d-d164-469e-9fd4-daa38f2b2e13%2F)
+- [Microsoft T-Drive Dataset: Taxi One-Week Trajectories](https://www.microsoft.com/en-us/research/publication/t-drive-trajectory-data-sample/)
+- [Open NYC Data](https://opendata.cityofnewyork.us/)
+- [Reddit Comments DataSet](https://github.com/linanqiu/reddit-dataset)
+- [Stanford Car Images Dataset](http://ai.stanford.edu/~jkrause/cars/car_dataset.html)
+- [Stanford House Numbers Dataset](http://ufldl.stanford.edu/housenumbers/)
+- [Wikipedia Toxic Comment Classification Challenge](https://www.kaggle.com/c/jigsaw-toxic-comment-classification-challenge)
+- [Yelp Dataset (businesses, reviews, and user data)](https://www.yelp.com/dataset)
 
 If you want to avoid training your own models, you can also find pretrained models online!
 
-- [Model Zoo](https://modelzoo.co/)
 - [Model Depot](https://modeldepot.io/)
+- [Model Zoo](https://modelzoo.co/)
 
 ## ☁️ Cloud Computing
 
 Cloud computing is especially useful when you need to do heavy computations (read: Machine Learning). There are a few providers. If this is your first time using them, they usually provide a bunch of free credits for students.
 
 - [Amazon Web Services](https://aws.amazon.com/machine-learning/)
+- [Google Colab](https://colab.research.google.com/notebooks/welcome.ipynb)
 - [Google Cloud Platform](https://cloud.google.com/products/ai/)
 - [IBM Watson](https://www.ibm.com/analytics/machine-learning)
 - [Microsoft Azure](https://azure.microsoft.com/en-ca/overview/machine-learning/)
-- [Google Colab](https://colab.research.google.com/notebooks/welcome.ipynb)
 
 ## 🏡 Hosting your application
 
 It's not a requirement to host your final submission anywhere (you can demo your project locally), but you can easily host your project on the cloud so you can show it off to anyone with a link.
 
-- [Heroku](https://www.heroku.com/)
 - [AWS Elastic Beanstalk](https://aws.amazon.com/elasticbeanstalk/)
+- [Heroku](https://www.heroku.com/)
 - [Netlify](https://www.netlify.com/)
