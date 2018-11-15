@@ -21,6 +21,8 @@ These are some recommended tools for general hackathon success:
 - [Visual Studio Code](https://code.visualstudio.com/) - Your favorite programmer's favorite text editor.
 - [GitHub Desktop](https://desktop.github.com/) - Easy-to-use Git GUI interface so you don't need to use the command line.
 - [Postman](https://www.getpostman.com/) - REST API testing tool.
+- [Jupyter Notebooks](http://jupyter.org/install) - Powerful Python web app IDE. Widely used in Machine Learning
+- [Google Colab](https://colab.research.google.com/notebooks/welcome.ipynb) - Google's Python Cloud Development Environment, allows running models on a GPU
 
 ## 🏎 Boilerplates
 
@@ -43,10 +45,16 @@ Here are a few libraries that might prove to be useful during the competition! I
 - [Leaflet](http://leafletjs.com/)
 - [NLTK](http://www.nltk.org/)
 - [OpenCV](https://pypi.org/project/opencv-python/)
+- [Numpy](http://www.numpy.org/)
 - [PyTorch](https://pytorch.org/)
+- [Tensorflow](https://www.tensorflow.org/tutorials/)
+- [Tensorflow JS](https://js.tensorflow.org/)
 - [scikit-learn](http://scikit-learn.org/stable/)
 - [TextBlob](http://textblob.readthedocs.org/)
 - [tracking.js](https://trackingjs.com/)
+- [brain.js](https://github.com/BrainJS/brain.js)
+- [Natural for node.js](https://github.com/NaturalNode/natural)
+- [Octave](https://www.gnu.org/software/octave/)
 
 ## 🔌 Useful Plug and Play APIs
 
@@ -71,8 +79,23 @@ Without data, how are you going to recognize patterns? Here are some resources y
 - [Australian Government Data](https://data.gov.au/dataset)
 - [Google Data Set Search](https://toolbox.google.com/datasetsearch)
 - [Kaggle Datasets](https://www.kaggle.com/datasets)
-- [GIS Datasets](https://freegisdata.rtwilson.com/)
 - [Open NYC Data](https://opendata.cityofnewyork.us/)
+- [Microsoft Building Footprint Data](https://wiki.openstreetmap.org/wiki/Microsoft_Building_Footprint_Data)
+- [Geographic Datasets](http://freegisdata.rtwilson.com/)
+- [Microsoft T-Drive Dataset: Taxi One-Week Trajectories](https://www.microsoft.com/en-us/research/publication/t-drive-trajectory-data-sample/)
+- [Microsoft GPS Trajectories Dataset](https://www.microsoft.com/en-us/download/details.aspx?id=52367&from=http%3A%2F%2Fresearch.microsoft.com%2Fen-us%2Fdownloads%2Fb16d359d-d164-469e-9fd4-daa38f2b2e13%2F)
+- [Wikipedia Toxic Comment Classification Challenge](https://www.kaggle.com/c/jigsaw-toxic-comment-classification-challenge)
+- [Reddit Comments DataSet](https://github.com/linanqiu/reddit-dataset)
+- [Amazon Q&A Dataset](http://jmcauley.ucsd.edu/data/amazon/qa/)
+- [36th Parliament of Canada Debates Dataset](https://www.isi.edu/natural-language/download/hansard/)
+- [Yelp Dataset (businesses, reviews, and user data)](https://www.yelp.com/dataset)
+- [Home Depot Search Queries Dataset](https://www.kaggle.com/c/home-depot-product-search-relevance/data)
+- [IMDB Dataset](http://ai.stanford.edu/~amaas/data/sentiment/)
+- [Stanford Car Images Dataset](http://ai.stanford.edu/~jkrause/cars/car_dataset.html)
+- [Stanford House Numbers Dataset](http://ufldl.stanford.edu/housenumbers/)
+- [Food Images Dataset](http://www.vision.ee.ethz.ch/datasets_extra/food-101/)
+- [Cat Images Dataset (purrrfect)](http://web.archive.org/web/20150520175645/http:/137.189.35.203/WebUI/CatDatabase/catData.html)
+- [Flikr Thematic Image Datasets](http://people.csail.mit.edu/celiu/CVPR2010/FMD/index.html)
 
 If you want to avoid training your own models, you can also find pretrained models online!
 
