@@ -1,0 +1,165 @@
+%%% Gabarit de présentation du DMS
+\RequirePackage{graphicx}
+\usepackage{colortbl}
+
+\usepackage{tikz}
+
+%%% Couleurs
+\definecolor{bleu-udem}{RGB}{0, 107, 182}
+\definecolor{gris-udem}{RGB}{102, 102, 102}
+\definecolor{rouge}{RGB}{204, 0, 0}
+\definecolor{vert}{RGB}{153, 204, 0}
+
+\definecolor{intact-red}{RGB}{192, 0, 0}
+\definecolor{intact-blue}{RGB}{24, 168, 166}
+
+\usecolortheme{lily}  % désinstalle les couleurs par défaut
+\setbeamercolor*{normal text}{fg=black,bg=white}
+\setbeamercolor*{alerted text}{fg=rouge}
+\setbeamercolor*{example text}{fg=vert}
+\setbeamercolor*{structure}{fg=black}
+
+\setbeamercolor*{block title}{fg=white,bg=gris-udem}
+\setbeamercolor*{block title alerted}{fg=white,bg=gris-udem}
+\setbeamercolor*{block title example}{fg=white,bg=gris-udem}
+
+\setbeamercolor*{block body}{bg=black!10}
+\setbeamercolor*{block body alerted}{bg=black!10}
+\setbeamercolor*{block body example}{bg=black!10}
+
+\setbeamercolor{item}{fg=bleu-udem}
+\setbeamercolor{background canvas}{bg=gris-udem!5}
+
+
+%%% Liens
+\hypersetup{
+  colorlinks=true,
+  pdfnewwindow=true,
+  linkcolor=gris-udem,
+  citecolor=bleu-udem,
+  filecolor=bleu-udem,
+  urlcolor=bleu-udem
+}
+
+
+%%% Canva
+\newlength{\textmarginL}
+\newlength{\textmarginR}
+\setlength{\textmarginL}{7.5mm}
+\setlength{\textmarginR}{3.5mm}
+%\setlength{\textmarginL}{0mm}
+%\setlength{\textmarginR}{0mm}
+\setbeamersize{text margin left=\textmarginL, text margin right=\textmarginR}
+\newlength{\titleseparator}
+\setlength{\titleseparator}{.71\paperwidth}  % distance entre le côté gauche et la barre horizontale (Page titre)
+\newenvironment{changemargin}[2]{%
+  \begin{list}{}{%
+    \setlength{\topsep}{0pt}%
+    \setlength{\leftmargin}{#1}%
+    \setlength{\rightmargin}{#2}%
+    \setlength{\listparindent}{\parindent}%
+    \setlength{\itemindent}{\parindent}%
+    \setlength{\parsep}{\parskip}%
+  }%
+  \item[]}{\end{list}}
+
+%%% Images et logo
+\newcommand{\insertslidelogo}{\rule{0pt}{.14\paperheight}} % .14\paperheight = .22\paperwidth
+\newcommand{\slidelogo}{
+  \renewcommand{\insertslidelogo}{
+	\includegraphics[height=.14\paperheight]{figures/template/titlepage_background}
+  }
+}
+\newcommand{\inserttitlelogo}{\rule{0pt}{.16\paperheight}}  % .16\paperheight = .25\paperwidth
+\newcommand{\titlelogo}{
+  \renewcommand{\inserttitlelogo}{
+	\includegraphics[height=0.16\paperheight]{figures/template/titlepage_background}
+  }
+}
+\newcommand{\inserttitleimage}{\rule{0pt}{.28\paperheight}}
+\newcommand{\titleimage}[1]{
+  \renewcommand{\inserttitleimage}{
+  \includegraphics[height=.28\paperheight, keepaspectratio=true]{#1}
+  }
+}
+
+%%% Page titre
+\setbeamertemplate{title page}{
+
+\begin{changemargin}{-\textmarginL}{-\textmarginR}
+%\begin{tabular}{@{}r!{\color{bleu-udem}\vline}@{}l@{}}
+% & \inserttitlelogo\\
+%\inserttitleimage & \\
+%\rule{0pt}{20pt}
+%\parbox{\titleseparator}{\flushright\Large{\inserttitle}} & \\
+%\parbox{\titleseparator}{\flushright\small{\insertsubtitle}}  & \\
+%\rule{0pt}{24pt}
+%\parbox{\titleseparator}{\flushright\insertauthor} & \\
+%\parbox{\titleseparator}{\flushright\insertinstitute}  & \\
+%\rule{0pt}{18pt}
+%\parbox{\titleseparator}{\flushright\small{\insertdate}} & \\
+%\end{tabular}
+\vspace{-9pt}
+\begin{tikzpicture}
+	\draw (0, 0) node[inner sep=0] {\includegraphics[width=\paperwidth, height=1.02\paperheight]{figures/template/titlepage_background}};
+	\draw (0, 2) node {\parbox{\titleseparator}{\centering \color{white} \Huge{\inserttitle}}};
+	\draw (-2, -0.5) node {\parbox{\titleseparator}{\centering \color{white} \Large{\insertauthor}}};
+	\draw (-2, -1.25) node {\parbox{\titleseparator}{\centering \color{white} \insertinstitute}};
+	\draw (-2, -2.) node {\parbox{\titleseparator}{\centering \color{white} \insertdate}};
+
+\end{tikzpicture}
+\end{changemargin}
+}
+
+
+%%% Entête
+\setbeamertemplate{frametitle}{%
+\vskip-33pt\parbox[c]{.68\paperwidth}{\large\insertframetitle}\vskip4pt%
+}
+\setbeamertemplate{headline}{%
+\vspace{.14\paperheight}
+
+\hspace{20pt}
+\color{intact-blue}\rule{0.075\paperwidth}{0.5pt}
+\hspace{-5pt}
+\color{black}\rule{0.075\paperwidth}{0.5pt}
+\hspace{-5pt}
+\color{intact-red}\rule{.075\paperwidth}{.5pt}%
+}
+
+
+%%% Pied de page
+\beamertemplatenavigationsymbolsempty
+\newcommand{\numsubsectionname}{}
+\newcommand{\showsubsection}{
+  \renewcommand{\numsubsectionname}{%
+	\thesection.\thesubsection \; \insertsubsection
+  }
+}
+\newcommand{\insertfootlinetext}{}
+\newcommand{\footlinetext}[1]{
+  \renewcommand{\insertfootlinetext}{#1}
+}
+%\setbeamertemplate{footline}{
+%{\hfill\color{bleu-udem}\rule{.98\paperwidth}{0.07pt}}%
+%\vskip4pt%
+%\color{gris-udem}%
+%\rule{0.02\paperwidth}{0pt}%
+%\numsubsectionname
+%\hfill%
+%\mbox{\insertfootlinetext\qquad\qquad\insertframenumber}%
+%\rule{\textmarginR}{0pt}%
+%\vskip4pt%
+%}
+
+\setbeamertemplate{footline}{
+
+\hspace{12pt}
+\begin{tikzpicture}
+	\node[mark size=7.5pt,color=intact-blue] at (0,0) {\pgfuseplotmark{*}};
+	\node[mark size=7.5pt,color=intact-red, opacity=0.9] at (0.25,0) {\pgfuseplotmark{*}};
+	\draw (0.25, 0) node {\color{white} \insertframenumber};
+\end{tikzpicture}
+\vspace{12pt}
+}
+

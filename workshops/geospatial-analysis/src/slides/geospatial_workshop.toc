@@ -1,0 +1,8 @@
+\beamer@endinputifotherversion {3.36pt}
+\select@language {french}
+\beamer@sectionintoc {1}{Open Street Map}{4}{0}{1}
+\beamer@sectionintoc {2}{Building and visualizing road networks with OSMnx}{7}{0}{2}
+\beamer@sectionintoc {3}{GeoLife GPS Trajectories Dataset}{15}{0}{3}
+\beamer@sectionintoc {4}{Finding hotspots in Beijing}{16}{0}{4}
+\beamer@sectionintoc {5}{Predicting a driver's destination}{24}{0}{5}
+\beamer@sectionintoc {6}{Geospatial Data Science at Intact}{40}{0}{6}

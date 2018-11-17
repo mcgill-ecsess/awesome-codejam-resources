@@ -1,0 +1,49 @@
+This is BibTeX, Version 0.99d (TeX Live 2015)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: geospatial_workshop.aux
+The style file: siam.bst
+Database file #1: references.bib
+Warning--can't use both volume and number fields in ester1996density
+Warning--empty journal in paszke2017automatic
+You've used 11 entries,
+            2030 wiz_defined-function locations,
+            572 strings with 6080 characters,
+and the built_in function-call counts, 5036 in all, are:
+= -- 478
+> -- 282
+< -- 0
++ -- 112
+- -- 100
+* -- 418
+:= -- 778
+add.period$ -- 11
+call.type$ -- 11
+change.case$ -- 81
+chr.to.int$ -- 0
+cite$ -- 13
+duplicate$ -- 206
+empty$ -- 335
+format.name$ -- 100
+if$ -- 1063
+int.to.chr$ -- 0
+int.to.str$ -- 11
+missing$ -- 11
+newline$ -- 36
+num.names$ -- 22
+pop$ -- 79
+preamble$ -- 1
+purify$ -- 70
+quote$ -- 0
+skip$ -- 179
+stack$ -- 0
+substring$ -- 336
+swap$ -- 93
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 44
+warning$ -- 2
+while$ -- 49
+width$ -- 13
+write$ -- 102
+(There were 2 warnings)

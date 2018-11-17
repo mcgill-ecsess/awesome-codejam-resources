@@ -96,3 +96,6 @@ It's not a requirement to host your final submission anywhere (you can demo your
 - [Heroku](https://www.heroku.com/)
 - [AWS Elastic Beanstalk](https://aws.amazon.com/elasticbeanstalk/)
 - [Netlify](https://www.netlify.com/)
+
+## 👩‍🏫 Workshop content
+The content from the Geospatial Analysis, Computer Vision, and NLP workshops is now online. Check out the `/workshops/` folder in this repository for more details.

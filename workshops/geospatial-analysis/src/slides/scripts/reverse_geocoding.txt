@@ -1,0 +1,10 @@
+Centroid 1 : Zhongguancunnaner St, Zhongguancun Haidian District, China, China
+Centroid 2 : Xibahe Rd, Chaoyang Qu, China, China
+Centroid 3 : Huilongguan West Ave, Changping District, China, China
+Centroid 4 : Jintai North St, Hujialou Chaoyang Qu, China, China
+Centroid 5 : Beiyuan Rd, Asian Sports Village Chaoyang Qu, China, China
+Centroid 6 : N 3rd Ring East Side Rd, Chaoyang Qu, China, China
+Centroid 7 : W Wulidian, Fengtai, China, China
+Centroid 8 : Hongjunying Rd, Chaoyang Qu, China, China
+Centroid 9 : Houbajia East Rd, Haidian District, China, China
+Centroid 10 : Beitaiping Rd, Haidian District, China, China
