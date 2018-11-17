@@ -1,0 +1,58 @@
+\begin{thebibliography}{10}
+
+\bibitem{ashbrook2003using}
+{\sc D.~Ashbrook and T.~Starner}, {\em Using gps to learn significant locations
+  and predict movement across multiple users}, Personal and Ubiquitous
+  computing, 7 (2003), pp.~275--286.
+
+\bibitem{boeing2017osmnx}
+{\sc G.~Boeing}, {\em Osmnx: New methods for acquiring, constructing,
+  analyzing, and visualizing complex street networks}, Computers, Environment
+  and Urban Systems, 65 (2017), pp.~126--139.
+
+\bibitem{de2015artificial}
+{\sc A.~De~Br{\'e}bisson, {\'E}.~Simon, A.~Auvolat, P.~Vincent, and Y.~Bengio},
+  {\em Artificial neural networks applied to taxi destination prediction},
+  arXiv preprint arXiv:1508.00021,  (2015).
+
+\bibitem{ester1996density}
+{\sc M.~Ester, H.-P. Kriegel, J.~Sander, X.~Xu, et~al.}, {\em A density-based
+  algorithm for discovering clusters in large spatial databases with noise.},
+  in Kdd, vol.~96, 1996, pp.~226--231.
+
+\bibitem{haklay2008openstreetmap}
+{\sc M.~Haklay and P.~Weber}, {\em Openstreetmap: User-generated street maps},
+  Ieee Pervas Comput, 7 (2008), pp.~12--18.
+
+\bibitem{krumm2006predestination}
+{\sc J.~Krumm and E.~Horvitz}, {\em Predestination: Inferring destinations from
+  partial trajectories}, in International Conference on Ubiquitous Computing,
+  Springer, 2006, pp.~243--260.
+
+\bibitem{paszke2017automatic}
+{\sc A.~Paszke, S.~Gross, S.~Chintala, G.~Chanan, E.~Yang, Z.~DeVito, Z.~Lin,
+  A.~Desmaison, L.~Antiga, and A.~Lerer}, {\em Automatic differentiation in
+  pytorch},  (2017).
+
+\bibitem{pedregosa2011scikit}
+{\sc F.~Pedregosa, G.~Varoquaux, A.~Gramfort, V.~Michel, B.~Thirion, O.~Grisel,
+  M.~Blondel, P.~Prettenhofer, R.~Weiss, V.~Dubourg, et~al.}, {\em
+  Scikit-learn: Machine learning in python}, Journal of machine learning
+  research, 12 (2011), pp.~2825--2830.
+
+\bibitem{zheng2008understanding}
+{\sc Y.~Zheng, Q.~Li, Y.~Chen, X.~Xie, and W.-Y. Ma}, {\em Understanding
+  mobility based on gps data}, in Proceedings of the 10th international
+  conference on Ubiquitous computing, ACM, 2008, pp.~312--321.
+
+\bibitem{zheng2010geolife}
+{\sc Y.~Zheng, X.~Xie, and W.-Y. Ma}, {\em Geolife: A collaborative social
+  networking service among user, location and trajectory.}, IEEE Data Eng.
+  Bull., 33 (2010), pp.~32--39.
+
+\bibitem{zheng2009mining}
+{\sc Y.~Zheng, L.~Zhang, X.~Xie, and W.-Y. Ma}, {\em Mining interesting
+  locations and travel sequences from gps trajectories}, in Proceedings of the
+  18th international conference on World wide web, ACM, 2009, pp.~791--800.
+
+\end{thebibliography}

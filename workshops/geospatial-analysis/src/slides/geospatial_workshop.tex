@@ -1,0 +1,592 @@
+\documentclass[aspectratio=169]{beamer}
+
+
+%%% Style
+\include{intact_datalab_beamer_template}
+
+
+%%% Extensions utiles pour le français
+\usepackage[french]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+\usepackage{xcolor}
+
+%%% Extensions utiles pour les math
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{bbold}
+\usepackage{mathtools}
+
+\DeclareMathOperator*{\argmin}{arg\,min}
+
+%%% Extensions pour les figures
+\usepackage{graphicx}
+\usepackage{subfig}
+\usepackage{tikz}
+
+%%% for python scripts
+\usepackage{listings}
+\usepackage{verbatim}
+
+%%% Bibliographie
+\usepackage{bibentry}
+
+%%% Informations sur la présentation
+\author{Patrice B\'echard}
+\institute[Intact]{
+\small{Intact Data Lab} \\
+\textit{patrice.bechard@intact.net}
+}
+\title{Pattern Recognition with Geospatial Data}
+\date{November 16th, 2018}
+
+
+%%% Préférences (Propre au thème du DMS)
+\slidelogo
+\titlelogo
+%\titleimage{figures/deep_learning_v2.png}  % Image à afTficher sur la page titre
+\footlinetext{  % À utiliser surtout pour les congrès
+\insertshorttitle\quad\insertshortdate\quad\insertshortinstitute
+}
+
+
+\def\signed #1{{\leavevmode\unskip\nobreak\hfil\penalty50\hskip2em
+  \hbox{}\nobreak\hfil(#1)%
+  \parfillskip=0pt \finalhyphendemerits=0 \endgraf}}
+
+\newsavebox\mybox
+\newenvironment{aquote}[1]
+  {\savebox\mybox{#1}\begin{quote}}
+  {\signed{\usebox\mybox}\end{quote}}
+
+\usepackage{ragged2e}
+
+
+%%% Début
+\begin{document}
+
+% Title page
+
+\begin{frame}[plain, t]
+  \titlepage
+\end{frame}
+
+% Motivations
+
+\begin{frame}{Motivation}
+\centering
+{\Large Why is it an interesting problem?}
+\vspace{.5cm}
+
+\begin{itemize}
+    \item Lots of GPS data from users
+    \item May want to do things such as
+    \begin{itemize}
+        \item Find patterns in the driving habits of users
+        \item Detect dangerous road sections
+        \item Optimize fastest route based on traffic
+        \item ...
+    \end{itemize}
+\end{itemize}
+    
+\end{frame}
+
+
+\begin{frame}{Plan}
+  \tableofcontents
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Open Street Map
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Open Street Map}
+\begin{frame}{Open Street Map (OSM) \cite{haklay2008openstreetmap}}
+
+\begin{center}
+{\LARGE Open Street Map}
+\end{center}
+
+\begin{columns}
+\begin{column}{0.5\textwidth}
+	
+	\begin{itemize}
+		\item Open-source map maintained by users
+		\item Contains various informations about:
+		\begin{itemize}
+			\item road segments
+			\item intersections
+			\item landmarks
+			\item ...
+		\end{itemize}
+		\item Contains a routing engine similar to Google Maps 
+		\item \url{https://www.openstreetmap.org/}
+	\end{itemize}
+\end{column}
+\begin{column}{0.5\textwidth}  %%<--- here
+    \begin{center}
+     \includegraphics[width=0.7\textwidth]{figures/osm_logo.png}
+     \end{center}
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}{Open Street Map (OSM) \cite{haklay2008openstreetmap}}
+
+{\Large Example : Querying features nearby}
+\centering
+\includegraphics[width=0.85\textwidth]{figures/osm_query}
+
+\end{frame}
+
+\begin{frame}{Open Street Map (OSM) \cite{haklay2008openstreetmap}}
+
+{\Large Example : Find optimal route between two points}
+\centering
+\includegraphics[width=0.85\textwidth]{figures/osm_routing}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% OSMnx
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Building and visualizing road networks with OSMnx}
+
+\begin{frame}{OSMnx \cite{boeing2017osmnx}}
+
+\begin{center}
+{\LARGE OSMnx Overview}
+\end{center}
+
+\begin{columns}
+\begin{column}{0.75\textwidth}
+	
+	\begin{itemize}
+		\item Open-source Python library
+		\item Represents the road network as a directed
+		\item Allows us to
+		\begin{itemize}
+			\item Create the road network of a given location
+			\item Visualize this network easily
+			\item Simplify the road network by removing non-intersection nodes
+			\item Compute statistics about the road network
+			\item Find the shortest path between two nodes of the graph
+			\item ...
+		\end{itemize}
+		\item \url{https://github.com/gboeing/osmnx}
+	\end{itemize}
+\end{column}
+\begin{column}{0.25\textwidth}  %%<--- here
+    \begin{center}
+     \includegraphics[width=0.8\textwidth]{figures/osmnx_manhattan}
+     \end{center}
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}{OSMnx \cite{boeing2017osmnx}}
+
+{\Large Example : Creating the road network for Verdun}
+{\small \lstinputlisting[language=Python]{scripts/verdun_network.py}}
+\centering
+\includegraphics[height=4cm]{figures/verdun_network}
+
+\end{frame}
+
+\begin{frame}{OSMnx \cite{boeing2017osmnx}}
+
+{\Large Example : Creating the shape of the Island of Montreal}
+{\small \lstinputlisting[language=Python]{scripts/montreal_shape.py}}
+\centering
+\includegraphics[height=4cm]{figures/montreal_shape}
+
+\end{frame}
+
+\begin{frame}{OSMnx \cite{boeing2017osmnx}}
+
+{\Large Example : Creating a graph from a bounding box}
+{\small \lstinputlisting[language=Python]{scripts/graph_from_bbox.py}}
+\vspace{.5cm}
+{\Large Example : Creating a graph from a single coordinate}
+{\small \lstinputlisting[language=Python]{scripts/graph_from_point.py}}
+
+\end{frame}
+
+\begin{frame}{OSMnx \cite{boeing2017osmnx}}
+
+{\Large Example : Compute statistics about the network}
+{\small \lstinputlisting[language=Python]{scripts/osmnx_stats.py}}
+{\small \verbatiminput{scripts/osmnx_stats_results.json}}
+
+\end{frame}
+
+\begin{frame}{OSMnx \cite{boeing2017osmnx}}
+
+{\Large Example : Finding the shortest path between two locations}
+{\footnotesize \lstinputlisting[language=Python]{scripts/shortest_path.py}}
+
+\end{frame}
+
+\begin{frame}{OSMnx \cite{boeing2017osmnx}}
+
+{\Large Example : Finding the shortest path between two locations}
+\centering
+\includegraphics[width=0.5\textwidth]{figures/shortest_path}
+
+\end{frame}
+
+\begin{frame}{OSMnx \cite{boeing2017osmnx}}
+
+{\Large For more examples and things to do with OSMnx, check out these links :}
+\vspace{1cm}
+\begin{itemize}
+	\item \url{https://geoffboeing.com/2016/11/osmnx-python-street-networks/} (overview)
+	\item \url{https://osmnx.readthedocs.io/en/stable/} (documentation)
+	\item \url{https://github.com/gboeing/osmnx-examples/} (more examples)
+\end{itemize}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% GeoLife GPS Trajectories dataset
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{GeoLife GPS Trajectories Dataset}
+
+\begin{frame}{The GeoLife GPS Trajectories Dataset \cite{zheng2008understanding, zheng2010geolife, zheng2009mining}}
+
+\begin{center}
+{\LARGE The GeoLife GPS Trajectories Dataset}
+\end{center}
+
+Dataset containing GPS trajectories from 181 users mostly around Beijing, China.
+\begin{itemize}
+	\item \textbf{Number of unique trips} : 18,670
+	\item \textbf{Total distance} : 1,292,951 km
+	\item \textbf{Total duration} : 50,176 hours
+\end{itemize}
+\vspace{.5cm}
+For a full overview of the dataset :
+\begin{itemize}
+	\item \url{https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/User20Guide-1.2.pdf}
+\end{itemize}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Origin Clustering
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Finding hotspots in Beijing}
+
+\begin{frame}{Finding hotspots in Beijing}
+
+\begin{center}
+{\LARGE Finding hotspots in Beijing}
+\end{center}
+
+We can use trip origins and destinations to find the hotspots in Beijing.
+
+\begin{itemize}
+	\item We use the GeoLife GPS Trajectories Dataset.
+	\item We use the clustering algorithms from the \textit{Scikit-Learn} python library\cite{pedregosa2011scikit}.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Finding hotspots in Beijing}
+
+{\Large What is clustering?}
+\vspace{.5cm}
+
+\begin{itemize}
+	\item Type of unsupervised learning problem
+	\item We try to find groups of data with similar properties.
+	\item In our case, we want to find data points that are close to each other.
+\end{itemize}
+\vspace{.5cm}
+
+We decide to use the \textbf{DBSCAN}\cite{ester1996density} algorithm for many reasons :
+\begin{itemize}
+	\item The clusters may have any arbitrary shape
+	\item No need to specify a number of clusters manually
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Finding hotspots in Beijing}
+
+{\Large \textbf{Task} : find the 10 largest clusters in our data and identify them}
+\vspace{.5cm}
+\\
+{\Large \textbf{To do}}:
+\begin{enumerate}
+	\item Cluster the data using the DBSCAN algorithm
+	\item Removing points not in the 10 largest clusters
+	\item Find the centroid of each cluster
+	\item Use reverse geocoding to find around what landmark are the clusters positioned
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{Finding hotspots in Beijing}
+\begin{columns}
+\begin{column}{0.5\textwidth}
+\begin{description}
+	\item [1.] Cluster the data using the DBSCAN algorithm
+\end{description}
+\end{column}
+\begin{column}{0.5\textwidth}  %%<--- here
+     \centering
+	\includegraphics[height=7.5cm]{figures/cluttered_map}
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}{Finding hotspots in Beijing}
+\begin{columns}
+\begin{column}{0.5\textwidth}
+\begin{description}
+	\item [2.] Removing points not in the 10 largest clusters
+\end{description}
+\end{column}
+\begin{column}{0.5\textwidth}  %%<--- here
+     \centering
+	\includegraphics[height=7.5cm]{figures/reduced_map}
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}{Finding hotspots in Beijing}
+\begin{columns}
+\begin{column}{0.5\textwidth}
+\begin{description}
+	\item [3.] Find the centroid of each cluster
+\end{description}
+\end{column}
+\begin{column}{0.5\textwidth}  %%<--- here
+     \centering
+	\includegraphics[height=7.5cm]{figures/annotated_map}
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}{Finding hotspots in Beijing}
+\begin{center}
+\begin{description}
+	\item [4.] Use reverse geocoding to find around what landmark are the clusters positioned
+\end{description}
+{\small \verbatiminput{scripts/reverse_geocoding.txt}}
+\end{center}
+\end{frame}
+
+\begin{frame}{Finding hotspots in Beijing}
+
+{\Large Possible improvements}
+\vspace{.5cm}
+\begin{itemize}
+	\item Make smaller clusters to improve reverse geocoding results
+	\item Find a way to find an actual landmark, not only the name of a street
+	\item Check if the clusters change depending on the hour of the day, the day of the week, ...
+	\item Use clusters to determine frequent locations of individuals
+\end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Destination Prediction
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Predicting a driver's destination}
+
+\begin{frame}{Predicting a driver's destination}
+
+\begin{center}
+{\LARGE Predicting a driver's destination}
+\end{center}
+
+We can try to predict a driver's destination based on the beginning of their trip.
+\vspace{.5cm}
+
+\begin{itemize}
+	\item Many people have tried to tackle this problem with various degree of success \cite{de2015artificial, krumm2006predestination}.
+	\item We will use a LSTM network to do the prediction.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Predicting a driver's destination}
+
+{\Large Quick introduction to neural networks}
+
+\begin{itemize}
+	\item Machine learning model allowing us to learn non-linear functions
+	\item Can be used for regression (target $\in \mathbb{R}$) and classification (target $\in \{1, \dots, N\}$).
+\end{itemize}
+\centering
+\includegraphics[height=4cm]{figures/nn}
+
+For more details : \url{http://cs231n.github.io/neural-networks-1/#nn}
+
+\end{frame}
+
+\begin{frame}{Predicting a driver's destination}
+
+{\Large Quick introduction to neural networks}
+
+\begin{itemize}
+	\item \textbf{Recurrent neural networks} can take variable length sequences as inputs.
+	\item Ideal when the data presents temporal dependencies
+	\item \textbf{Limitations} : Can have a hard time learning long-term dependencies
+\end{itemize}
+\centering
+\includegraphics[width=0.6\textwidth]{figures/rnn}
+
+For more details : \url{http://karpathy.github.io/2015/05/21/rnn-effectiveness/}
+
+\end{frame}
+
+\begin{frame}{Predicting a driver's destination}
+
+{\Large Quick introduction to neural networks}
+
+\begin{itemize}
+	\item \textbf{Long Short-Term Memory}(LSTM) networks can learn long-term dependencies better.
+\end{itemize}
+\centering
+\includegraphics[width=0.6\textwidth]{figures/lstm}
+
+For more details : \url{https://colah.github.io/posts/2015-08-Understanding-LSTMs/}
+
+\end{frame}
+
+\begin{frame}{Predicting a driver's destination}
+
+{\Large Our approach}
+
+\begin{itemize}
+	\item We feed a variable length sequence of \textit{(lat, long)} tuples to the model
+	\item We feed half of the trip in order to make the prediction
+	\item We try to predict the \textit{(lat, long)} tuple of the destination
+	\item This is a regression problem
+	\item We optimize the model based on the distance between the prediction and the actual destination
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Predicting a driver's destination}
+\centering
+\includegraphics[width=0.6\textwidth]{figures/ex1_reg}
+\end{frame}
+
+\begin{frame}{Predicting a driver's destination}
+\centering
+\includegraphics[width=0.6\textwidth]{figures/ex2_reg}
+\end{frame}
+
+\begin{frame}{Predicting a driver's destination}
+\centering
+\includegraphics[width=0.6\textwidth]{figures/ex3_reg}
+\end{frame}
+
+\begin{frame}{Predicting a driver's destination}
+\centering
+\includegraphics[width=0.6\textwidth]{figures/ex4_reg}
+\end{frame}
+
+\begin{frame}{Predicting a driver's destination}
+
+{\Large Problems}
+
+\begin{itemize}
+	\item The model always predicts points in the largest cluster of destinations seen earlier.
+	\item This is the "Safe bet" in order to reduce the distance between the predicted destination and the actual destination.
+	\item The model has no information about the road network where every trajectory happens.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Predicting a driver's destination}
+
+{\Large Our second try}
+
+\begin{itemize}
+	\item We feed a variable length sequence of \textit{(lat, long)} tuples to the model
+	\item We feed half of the trip in order to make the prediction
+	\item We try to predict the node of the road network closest to the destination.
+	\item This becomes a classification problem
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Predicting a driver's destination}
+\centering
+\includegraphics[width=0.6\textwidth]{figures/ex1_clf}
+\end{frame}
+
+\begin{frame}{Predicting a driver's destination}
+\centering
+
+\includegraphics[width=0.6\textwidth]{figures/ex2_clf}
+\end{frame}
+
+\begin{frame}{Predicting a driver's destination}
+\centering
+
+\includegraphics[width=0.6\textwidth]{figures/ex3_clf}
+\end{frame}
+
+\begin{frame}{Predicting a driver's destination}
+\centering
+
+\includegraphics[width=0.6\textwidth]{figures/ex4_clf}
+\end{frame}
+
+\begin{frame}{Predicting a driver's destination}
+
+{\Large Possible improvements}
+
+\vspace{.5cm}
+\begin{itemize}
+	\item Add time of the day and day of the week as features for each point.
+	\item Use nodes instead of raw GPS points as inputs (node embeddings)
+	\item Characterize how the error evolves depending on what fraction of the trip we use
+\end{itemize}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Geospatial Data Science at Intact
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Geospatial Data Science at Intact}
+
+\begin{frame}{Geospatial Data Science at Intact}
+\begin{itemize}
+	\item The UBI (\textit{Usage Based Insurance}) team at Intact tries to better understand the behavior of users based on their driving habits.
+	\vspace{.5cm}
+	\item We deal with huge amounts of geospatial data in order to :
+	\begin{itemize}
+		\item Detect dangerous behavior on the road
+		\item Detect dangerous streets where accidents are more frequent
+		\item Help users improve their driving habits via a mobile app
+	\end{itemize}
+	\vspace{.5cm}
+	\item We are always looking for interns!
+\end{itemize}
+
+\centering
+\href{https://careers.intact.ca/ca/en/}{\includegraphics[width=.2\textwidth]{figures/intact_logo}}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% References
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section*{References}
+
+\begin{frame}[t,allowframebreaks]
+\setbeamertemplate{bibliography item}{[\theenumiv]}
+
+
+  \frametitle{References}
+  \nocite*
+  \bibliographystyle{siam}
+  \bibliography{references}
+ \end{frame}
+
+\end{document}
