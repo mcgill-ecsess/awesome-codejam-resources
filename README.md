@@ -1,6 +1,6 @@
 # 🏖 CodeJam 2019 Resources
 
-This document contains a bunch of resources for CodeJam 2018. Feel free to look through and get yourself adjusted to the content before the hackathon.
+This document contains a bunch of resources for CodeJam 2019. Feel free to look through and get yourself adjusted to the content before the hackathon.
 
 ## 👶 Basics
 
